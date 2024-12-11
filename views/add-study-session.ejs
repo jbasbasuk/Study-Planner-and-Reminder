@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add Study Session</title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/Reminders">Reminders</a>
+      <a href="/StudyPlanner">Study Planner</a>
+      <a href="/Search">Search</a>
+      <a href="/add-course">Add Course</a>
+    </nav>
+    <h1>Add Study Session</h1>
+    <div class="form-container">
+      <form action="/add-study-session" method="post">
+        <label for="course_id">Course:</label>
+        <select name="course_id" id="course_id">
+          <% courses.forEach(function(course) { %>
+            <option value="<%= course.courseID %>"><%= course.course_name %></option>
+          <% }); %>
+        </select>
+
+        <label for="study_date">Date:</label>
+        <input type="date" name="study_date" id="study_date" required>
+
+        <label for="study_time">Time:</label>
+        <input type="time" name="study_time" id="study_time" required>
+
+        <label for="study_topic">Topic:</label>
+        <input type="text" name="study_topic" id="study_topic" required>
+
+        <label for="reminder_time">Reminder:</label>
+        <input type="datetime-local" name="reminder_time" id="reminder_time" required>
+
+        <button type="submit">Add Study Session</button>
+      </form>
+    </div>
+    <footer>
+      <p>&copy; 2024 StudyPlannerReminder. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
