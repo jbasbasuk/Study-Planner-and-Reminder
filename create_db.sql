@@ -1,6 +1,6 @@
 -- Create a new StudyPlannerReminder database
 CREATE DATABASE StudyPlannerReminder;
--- Use the newly created database
+-- created database
 USE StudyPlannerReminder;
 
 CREATE TABLE Users (
@@ -12,7 +12,7 @@ CREATE TABLE Users (
     registrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Insert sample data into Users table
+-- this is to Insert sample data into Users table
 INSERT INTO Users (firstName, lastName, email, password) 
 VALUES 
 ('Alice', 'Smith', 'alice@example.com', 'password123'),

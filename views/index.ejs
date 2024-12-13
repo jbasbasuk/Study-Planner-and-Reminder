@@ -1,22 +1,45 @@
 <!doctype html>
 <html>
-  <head>
+<head>
     <title>Welcome to <%= shopName %></title>
     <link rel="stylesheet" type="text/css" href="/main.css" />
-  </head>
-  <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/Reminders">Reminders</a>
-      <a href="/StudyPlanner">Study Planner</a>
-      <a href="/Search">Search</a>
-      <a href="/add-course">Add Course</a>
-      <a href="/add-study-session">Add Study Session</a>
-    </nav>
-    <h1>Welcome to <%= shopName %></h1>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/reminders">Study Reminders</a>
+            <a href="/search">Search</a>
+            <a href="/add-course">Add Course</a>
+            <a href="/add-study-session">Add Study Session</a>
+        </nav>
+    </header>
+    <main class="homepage-content">
+        <section class="welcome-section">
+            <h1>Welcome to <%= shopName %></h1>
+            <p>Your ultimate companion for academic success. Plan, organise, and excel in your studies with ease.</p>
+        </section>
+        <section class="features-section">
+            <h2>Key Features</h2>
+            <div class="features-container">
+                <div class="feature-box">
+                    <h3>Personalised Study Plans</h3>
+                    <p>Create schedules tailored to your courses and commitments.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Task Management</h3>
+                    <p>Track assignments, exams, and projects effortlessly.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Reminders</h3>
+                    <p>Set timely alerts to stay on top of your academic goals.</p>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer>
-      <p>&copy; 2024 <%= shopName %>. All Rights Reserved.</p>
+        <p>&copy; 2024 <%= shopName %>. All Rights Reserved.</p>
     </footer>
-  </body>
+</body>
 </html>

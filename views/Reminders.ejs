@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reminders</title>
+    <title>Study Reminders</title>
+    <link rel="stylesheet" type="text/css" href="/main.css">
 </head>
 <body>
-    <h1>Reminders</h1>
-    <ul>
-        <% reminders.forEach(function(reminder) { %>
-            <li>
-                <strong><%= reminder.message %></strong><br>
-                <small>Reminder set for: <%= reminder.reminderDateTime %></small>
-            </li>
-        <% }); %>
-    </ul>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/reminders">Study Reminders</a>
+        <a href="/search">Search</a>
+        <a href="/add-course">Add Course</a>
+        <a href="/add-study-session">Add Study Session</a>
+    </nav>
+    <main>
+        <h1>Study Reminders</h1>
+        <ul class="reminder-list">
+            <% reminders.forEach(function(reminder) { %>
+                <li class="reminder-item">
+                    <div class="reminder-content">
+                        <strong><%= reminder.course_name %></strong>: <%= reminder.study_topic %> on <%= reminder.study_date %> at <%= reminder.study_time %>
+                    </div>
+                    <!-- Delete button for each reminder -->
+                    <form action="/reminders/<%= reminder.session_id %>?_method=DELETE" method="POST" class="delete-form">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                </li>
+            <% }); %>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 StudyPlannerReminder. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

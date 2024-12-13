@@ -1,11 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>About <%=shopName%></title>
-    <link rel="stylesheet"  type="text/css" href="/main.css" />
-  </head>
-  <body>
-    <h1>Search <%=shopName%></h1>
-    <p>We sell all sorts of books and nothing else!</p>
-  </body>
+<head>
+    <title>Search Courses</title>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/reminders">Study Reminders</a>
+        <a href="/search">Search</a>
+        <a href="/add-course">Add Course</a>
+        <a href="/add-study-session">Add Study Session</a>
+    </nav>
+    <main>
+        <h1>Search for Courses</h1>
+        <div class="form-container">
+            <form action="/search-result" method="get">
+                <input type="text" name="keyword" placeholder="Search for courses..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <% if (keyword) { %>
+            <h2>Search Results for "<%= keyword %>":</h2>
+            <% if (results && results.length > 0) { %>
+                <ul>
+                    <% results.forEach(function (result) { %>
+                        <li>
+                            <strong><%= result.course_name %></strong>: <%= result.course_description %>
+                        </li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No courses found for "<%= keyword %>".</p>
+            <% } %>
+        <% } %>
+    </main>
+    <footer>
+        <p>&copy; 2024 StudyPlannerReminder. All Rights Reserved.</p>
+    </footer>
+</body>
 </html>

@@ -5,13 +5,27 @@ body {
   padding: 0;
   background-color: #f4f4f9;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures body takes full viewport height */
+}
+
+main {
+  flex: 1; /* Pushes the footer to the bottom if content is insufficient */
+  padding: 20px;
 }
 
 h1 {
   color: #444;
   text-align: center;
   margin-top: 20px;
-  font-size: 24px;
+  font-size: 28px;
+}
+
+h2 {
+  color: #007bff;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 a {
@@ -41,25 +55,35 @@ nav a:hover {
   color: #f4f4f9;
 }
 
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #444;
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
 /* Form Container */
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-  padding: 20px; /* Added padding for visual balance */
+  padding: 20px;
 }
 
-/* Form Styles */
 form {
-  margin: 0 auto; /* Center the form horizontally */
-  padding: 25px; /* Ensure consistent padding inside the form */
+  padding: 25px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  max-width: 500px; /* Consistent size for both forms */
-  width: 100%; /* Allow responsiveness */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a clean look */
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 form label {
@@ -72,21 +96,22 @@ form label {
 form input,
 form select,
 form textarea {
-  width: 100%; /* Ensure all fields span the container width */
+  width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
-  box-sizing: border-box; /* Avoid padding affecting width */
+  box-sizing: border-box;
 }
 
 form textarea {
-  resize: vertical; /* Allow only vertical resizing */
+  resize: vertical;
+  height: 100px;
 }
 
 form button {
-  width: 100%; /* Full-width button */
+  width: 100%;
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -100,12 +125,149 @@ form button:hover {
   background-color: #0056b3;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #444;
+/* Content Styles */
+ul.reminder-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.reminder-list li.reminder-item {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reminder-content {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* Delete Button Styles */
+.delete-form {
+  margin: 0;
+}
+
+.delete-button {
+  background-color: #dc3545;
   color: #fff;
-  margin-top: 20px;
+  border: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* About Page Specific Styles */
+.about-content {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h1 {
+  color: #444;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.about-content ul li {
+  margin-bottom: 10px;
+}
+
+/* Prevent Other Pages from Being Affected */
+.page-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+/* Homepage Content */
+.homepage-content {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.welcome-section {
+  margin-bottom: 30px;
+}
+
+.welcome-section h1 {
+  font-size: 36px;
+  color: #007bff;
+}
+
+.welcome-section p {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.features-section {
+  margin-top: 30px;
+}
+
+.features-section h2 {
+  font-size: 24px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.features-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature-box {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box h3 {
+  color: #007bff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  color: #555;
   font-size: 14px;
+  line-height: 1.4;
 }
